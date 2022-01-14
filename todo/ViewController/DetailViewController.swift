@@ -48,13 +48,13 @@ final class DetailViewController: UIViewController {
             return
         }
         
-        if let item = item {
+        if let item = item, let index = index {
             item.title = titleTextField.text
             item.details = detailsTextView.text
             CoreDataManager.shared.updateItem( { [weak self] result in
                 switch result {
                 case .success:
-                    self?.delegate?.currentItem(item: item, index: (self?.index)!, status: .update)
+                    self?.delegate?.currentItem(item: item, index: index, status: .update)
                     self?.navigationController?.popViewController(animated: true)
                 case .failure(let error):
                     self?.showAlert(message: error.localizedDescription)
@@ -74,10 +74,11 @@ final class DetailViewController: UIViewController {
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
-        CoreDataManager.shared.deleteItem(item: item!, { [weak self] result in
+        guard let item = item, let index = self.index else { return }
+        CoreDataManager.shared.deleteItem(item: item, { [weak self] result in
             switch result {
             case .success:
-                self?.delegate?.currentItem(item: (self?.item)!, index: (self?.index)!, status: .delete)
+                self?.delegate?.currentItem(item: item, index: index, status: .delete)
                 self?.navigationController?.popViewController(animated: true)
             case .failure(let error):
                 self?.showAlert(message: error.localizedDescription)
