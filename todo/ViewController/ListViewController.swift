@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+final class ListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
@@ -20,7 +20,15 @@ class ListViewController: UIViewController {
         setupTableView()
         addRightBarButtonItem()
         
-      
+        CoreDataManager.shared.getAllItems( { [weak self] result in
+            switch result {
+            case .success(let items):
+                self?.items = items
+                self?.tableView.reloadData()
+            case .failure(let error):
+                self?.showAlert(message: error.localizedDescription)
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,8 +41,6 @@ class ListViewController: UIViewController {
         tableView.register(UINib(nibName: Constants.cellIdentifier, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
-        
     }
     
     func addRightBarButtonItem() {
@@ -61,9 +67,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TodoTableCell.self), for: indexPath) as? TodoTableCell else { fatalError("Wrong type of cell") }
+        
         let item = self.items[indexPath.row]
         cell.set(item.title)
-        
         return cell
     }
     
@@ -86,7 +92,18 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         
         if editingStyle == .delete {
             let item = items[indexPath.row]
-            
+            CoreDataManager.shared.deleteItem(item: item, { [weak self] result in
+                switch result {
+                case .success:
+                    tableView.performBatchUpdates({
+                        self?.items.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }, completion: nil)
+                    self?.addLabelIfNeeded()
+                case .failure(let error):
+                    self?.showAlert(message: error.localizedDescription)
+                }
+            })
         }
     }
     
@@ -95,7 +112,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 extension ListViewController: DetailViewControllerDelegate {
     
     func currentItem(item: Item, index: Int, status: Status) {
-        
         switch status {
         case .update:
             tableView.performBatchUpdates({
@@ -124,5 +140,3 @@ enum Status {
     case delete
     case new
 }
-
-

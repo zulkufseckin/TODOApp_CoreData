@@ -10,17 +10,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoTableCell" id="9ss-Kr-4Yo" customClass="TodoTableCell" customModule="todo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9ss-Kr-4Yo" id="hih-eL-6pP">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4o-Xr-UAi">
-                        <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STa-xj-Ppz">
-                                <rect key="frame" x="0.0" y="11.5" width="42" height="21"/>
+                                <rect key="frame" x="20" y="24.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,16 +28,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="STa-xj-Ppz" firstAttribute="leading" secondItem="a4o-Xr-UAi" secondAttribute="leading" id="baZ-Mz-BLf"/>
+                            <constraint firstAttribute="height" constant="70" id="GJl-6g-t1p"/>
+                            <constraint firstItem="STa-xj-Ppz" firstAttribute="leading" secondItem="a4o-Xr-UAi" secondAttribute="leading" constant="20" id="baZ-Mz-BLf"/>
                             <constraint firstItem="STa-xj-Ppz" firstAttribute="centerY" secondItem="a4o-Xr-UAi" secondAttribute="centerY" id="i1m-fQ-6xa"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="a4o-Xr-UAi" firstAttribute="leading" secondItem="hih-eL-6pP" secondAttribute="leading" constant="20" id="KEM-1S-z1N"/>
+                    <constraint firstItem="a4o-Xr-UAi" firstAttribute="leading" secondItem="hih-eL-6pP" secondAttribute="leading" id="KEM-1S-z1N"/>
                     <constraint firstItem="a4o-Xr-UAi" firstAttribute="top" secondItem="hih-eL-6pP" secondAttribute="top" id="U0t-U9-aVz"/>
                     <constraint firstAttribute="bottom" secondItem="a4o-Xr-UAi" secondAttribute="bottom" id="UC2-ey-qZS"/>
-                    <constraint firstAttribute="trailing" secondItem="a4o-Xr-UAi" secondAttribute="trailing" constant="20" id="a9K-0P-udC"/>
+                    <constraint firstAttribute="trailing" secondItem="a4o-Xr-UAi" secondAttribute="trailing" id="a9K-0P-udC"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

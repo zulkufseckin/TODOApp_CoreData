@@ -11,7 +11,7 @@ protocol DetailViewControllerDelegate: AnyObject {
     func currentItem(item: Item, index: Int, status: Status)
 }
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var detailsTextView: UITextView!
@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         detailsTextView.delegate = self
         setUI()
     }
-        
+    
     func setUI() {
         if let item = item {
             titleTextField.text = item.title
@@ -47,17 +47,42 @@ class DetailViewController: UIViewController {
         guard let title = titleTextField.text, !title.isEmptyString else { showAlert(message: Constants.Warning.titleField)
             return
         }
+        
         if let item = item {
             item.title = titleTextField.text
             item.details = detailsTextView.text
-            
+            CoreDataManager.shared.updateItem( { [weak self] result in
+                switch result {
+                case .success:
+                    self?.delegate?.currentItem(item: item, index: (self?.index)!, status: .update)
+                    self?.navigationController?.popViewController(animated: true)
+                case .failure(let error):
+                    self?.showAlert(message: error.localizedDescription)
+                }
+            })
         } else {
-            
+            CoreDataManager.shared.createItem(title: title, details: detailsTextView.text, { [weak self] result in
+                switch result {
+                case .success(let item):
+                    self?.delegate?.currentItem(item: item!, index: .zero, status: .new)
+                    self?.navigationController?.popViewController(animated: true)
+                case .failure(let error):
+                    self?.showAlert(message: error.localizedDescription)
+                }
+            })
         }
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
-        
+        CoreDataManager.shared.deleteItem(item: item!, { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.currentItem(item: (self?.item)!, index: (self?.index)!, status: .delete)
+                self?.navigationController?.popViewController(animated: true)
+            case .failure(let error):
+                self?.showAlert(message: error.localizedDescription)
+            }
+        })
     }
 }
 
