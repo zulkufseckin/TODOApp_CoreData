@@ -31,6 +31,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BNX-IC-vfG"/>
+                    <connections>
+                        <outlet property="tableView" destination="4lJ-1d-6nX" id="FCi-2Z-J2M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBD-MZ-NL6" sceneMemberID="firstResponder"/>
             </objects>
