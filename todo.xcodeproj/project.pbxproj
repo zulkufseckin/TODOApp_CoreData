@@ -19,6 +19,7 @@
 		B929B0622791B11A00F3F68F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B0612791B11A00F3F68F /* Constants.swift */; };
 		B929B0642791B18600F3F68F /* TodoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B0632791B18600F3F68F /* TodoTableCell.swift */; };
 		B929B0662791B19300F3F68F /* TodoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B929B0652791B19300F3F68F /* TodoTableCell.xib */; };
+		B929B06B2791B6CD00F3F68F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B06A2791B6CD00F3F68F /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B929B0612791B11A00F3F68F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B929B0632791B18600F3F68F /* TodoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableCell.swift; sourceTree = "<group>"; };
 		B929B0652791B19300F3F68F /* TodoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableCell.xib; sourceTree = "<group>"; };
+		B929B06A2791B6CD00F3F68F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				B9204D2E2791AD3D00E2021C /* AppDelegate.swift */,
 				B9204D302791AD3D00E2021C /* SceneDelegate.swift */,
+				B929B06A2791B6CD00F3F68F /* CoreDataManager.swift */,
 				B929B0692791B1BC00F3F68F /* ViewController */,
 				B929B0672791B19A00F3F68F /* TodoTableCell */,
 				B929B0682791B1AE00F3F68F /* Helper */,
@@ -187,6 +190,7 @@
 				B929B05E2791AF9D00F3F68F /* DetailViewController.swift in Sources */,
 				B929B0642791B18600F3F68F /* TodoTableCell.swift in Sources */,
 				B929B0622791B11A00F3F68F /* Constants.swift in Sources */,
+				B929B06B2791B6CD00F3F68F /* CoreDataManager.swift in Sources */,
 				B9204D312791AD3D00E2021C /* SceneDelegate.swift in Sources */,
 				B9204D392791AD3D00E2021C /* todo.xcdatamodeld in Sources */,
 			);
