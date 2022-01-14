@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		B9204D2F2791AD3D00E2021C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9204D2E2791AD3D00E2021C /* AppDelegate.swift */; };
 		B9204D312791AD3D00E2021C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9204D302791AD3D00E2021C /* SceneDelegate.swift */; };
-		B9204D332791AD3D00E2021C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9204D322791AD3D00E2021C /* ViewController.swift */; };
+		B9204D332791AD3D00E2021C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9204D322791AD3D00E2021C /* ListViewController.swift */; };
 		B9204D362791AD3D00E2021C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9204D342791AD3D00E2021C /* Main.storyboard */; };
 		B9204D392791AD3D00E2021C /* todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9204D372791AD3D00E2021C /* todo.xcdatamodeld */; };
 		B9204D3B2791AD3F00E2021C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9204D3A2791AD3F00E2021C /* Assets.xcassets */; };
 		B9204D3E2791AD3F00E2021C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9204D3C2791AD3F00E2021C /* LaunchScreen.storyboard */; };
+		B929B05E2791AF9D00F3F68F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B05D2791AF9D00F3F68F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B9204D2B2791AD3D00E2021C /* todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9204D2E2791AD3D00E2021C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9204D302791AD3D00E2021C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B9204D322791AD3D00E2021C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9204D322791AD3D00E2021C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B9204D352791AD3D00E2021C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9204D382791AD3D00E2021C /* todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = todo.xcdatamodel; sourceTree = "<group>"; };
 		B9204D3A2791AD3F00E2021C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9204D3D2791AD3F00E2021C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9204D3F2791AD3F00E2021C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B929B05D2791AF9D00F3F68F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,8 @@
 			children = (
 				B9204D2E2791AD3D00E2021C /* AppDelegate.swift */,
 				B9204D302791AD3D00E2021C /* SceneDelegate.swift */,
-				B9204D322791AD3D00E2021C /* ViewController.swift */,
+				B9204D322791AD3D00E2021C /* ListViewController.swift */,
+				B929B05D2791AF9D00F3F68F /* DetailViewController.swift */,
 				B9204D342791AD3D00E2021C /* Main.storyboard */,
 				B9204D3A2791AD3F00E2021C /* Assets.xcassets */,
 				B9204D3C2791AD3F00E2021C /* LaunchScreen.storyboard */,
@@ -141,8 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9204D332791AD3D00E2021C /* ViewController.swift in Sources */,
+				B9204D332791AD3D00E2021C /* ListViewController.swift in Sources */,
 				B9204D2F2791AD3D00E2021C /* AppDelegate.swift in Sources */,
+				B929B05E2791AF9D00F3F68F /* DetailViewController.swift in Sources */,
 				B9204D312791AD3D00E2021C /* SceneDelegate.swift in Sources */,
 				B9204D392791AD3D00E2021C /* todo.xcdatamodeld in Sources */,
 			);
