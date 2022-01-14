@@ -51,7 +51,6 @@ class CoreDataManager {
         } catch let error as NSError {
             completion(.failure(error))
         }
-        
     }
     
     func updateItem(item: Item? = nil, _ completion: @escaping (Result<Item?, Error>) -> Void) {
