@@ -17,6 +17,8 @@
 		B929B05E2791AF9D00F3F68F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B05D2791AF9D00F3F68F /* DetailViewController.swift */; };
 		B929B0602791B10100F3F68F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B05F2791B10100F3F68F /* Extensions.swift */; };
 		B929B0622791B11A00F3F68F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B0612791B11A00F3F68F /* Constants.swift */; };
+		B929B0642791B18600F3F68F /* TodoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B929B0632791B18600F3F68F /* TodoTableCell.swift */; };
+		B929B0662791B19300F3F68F /* TodoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B929B0652791B19300F3F68F /* TodoTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		B929B05D2791AF9D00F3F68F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B929B05F2791B10100F3F68F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B929B0612791B11A00F3F68F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B929B0632791B18600F3F68F /* TodoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableCell.swift; sourceTree = "<group>"; };
+		B929B0652791B19300F3F68F /* TodoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +70,9 @@
 			children = (
 				B9204D2E2791AD3D00E2021C /* AppDelegate.swift */,
 				B9204D302791AD3D00E2021C /* SceneDelegate.swift */,
-				B9204D322791AD3D00E2021C /* ListViewController.swift */,
-				B929B05F2791B10100F3F68F /* Extensions.swift */,
-				B929B0612791B11A00F3F68F /* Constants.swift */,
-				B929B05D2791AF9D00F3F68F /* DetailViewController.swift */,
+				B929B0692791B1BC00F3F68F /* ViewController */,
+				B929B0672791B19A00F3F68F /* TodoTableCell */,
+				B929B0682791B1AE00F3F68F /* Helper */,
 				B9204D342791AD3D00E2021C /* Main.storyboard */,
 				B9204D3A2791AD3F00E2021C /* Assets.xcassets */,
 				B9204D3C2791AD3F00E2021C /* LaunchScreen.storyboard */,
@@ -77,6 +80,33 @@
 				B9204D372791AD3D00E2021C /* todo.xcdatamodeld */,
 			);
 			path = todo;
+			sourceTree = "<group>";
+		};
+		B929B0672791B19A00F3F68F /* TodoTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				B929B0632791B18600F3F68F /* TodoTableCell.swift */,
+				B929B0652791B19300F3F68F /* TodoTableCell.xib */,
+			);
+			path = TodoTableCell;
+			sourceTree = "<group>";
+		};
+		B929B0682791B1AE00F3F68F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B929B05F2791B10100F3F68F /* Extensions.swift */,
+				B929B0612791B11A00F3F68F /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B929B0692791B1BC00F3F68F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B9204D322791AD3D00E2021C /* ListViewController.swift */,
+				B929B05D2791AF9D00F3F68F /* DetailViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B929B0662791B19300F3F68F /* TodoTableCell.xib in Resources */,
 				B9204D3E2791AD3F00E2021C /* LaunchScreen.storyboard in Resources */,
 				B9204D3B2791AD3F00E2021C /* Assets.xcassets in Resources */,
 				B9204D362791AD3D00E2021C /* Main.storyboard in Resources */,
@@ -154,6 +185,7 @@
 				B929B0602791B10100F3F68F /* Extensions.swift in Sources */,
 				B9204D2F2791AD3D00E2021C /* AppDelegate.swift in Sources */,
 				B929B05E2791AF9D00F3F68F /* DetailViewController.swift in Sources */,
+				B929B0642791B18600F3F68F /* TodoTableCell.swift in Sources */,
 				B929B0622791B11A00F3F68F /* Constants.swift in Sources */,
 				B9204D312791AD3D00E2021C /* SceneDelegate.swift in Sources */,
 				B9204D392791AD3D00E2021C /* todo.xcdatamodeld in Sources */,
