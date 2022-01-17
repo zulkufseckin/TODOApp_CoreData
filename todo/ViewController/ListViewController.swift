@@ -48,9 +48,9 @@ final class ListViewController: UIViewController {
     }
     
     @objc func didTapRightBarButtonItem() {
-        let vc = UIStoryboard.init(name: Constants.storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        vc?.delegate = self
-        show(vc!, sender: self)
+        guard let vc = UIStoryboard.init(name: Constants.storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        vc.delegate = self
+        show(vc, sender: self)
     }
     
     func addLabelIfNeeded() {
@@ -75,13 +75,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = UIStoryboard.init(name: Constants.storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        vc?.delegate = self
+        guard let vc = UIStoryboard.init(name: Constants.storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        vc.delegate = self
         let index = indexPath.row
         let item = self.items[index]
-        vc?.index = index
-        vc?.item = item
-        show(vc!, sender: self)
+        vc.index = index
+        vc.item = item
+        show(vc, sender: self)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
